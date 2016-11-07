@@ -1,0 +1,8 @@
+com\dev\laptopmanf\dao\LaptopDaoImplementation.class
+com\dev\laptopmanf\service\DataBaseOperationsImplementation.class
+com\dev\laptopmanf\service\LoginValidation.class
+com\dev\laptopmanf\service\LoginValidationImplementation.class
+com\dev\laptopmanf\model\ChipManf.class
+com\dev\laptopmanf\service\DataBaseOperations.class
+com\dev\laptopmanf\LaptopController.class
+com\dev\laptopmanf\dao\LaptopDao.class

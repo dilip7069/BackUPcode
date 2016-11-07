@@ -1,0 +1,43 @@
+package Ass7;
+import java.io.*;
+import java.util.regex.*;
+
+public class CNDP {
+	
+	public static void main(String[] args) throws Exception
+	{
+		String temp;
+		System.out.println("Hello");
+		File f =new File("C:\\ppp.txt");
+		FileWriter fw=new FileWriter(f);
+		BufferedWriter bw = new BufferedWriter(fw);
+		FileReader fr=new FileReader("C:\\cndp\\genetic.txt");
+		BufferedReader br=new BufferedReader(fr);
+		String line=br.readLine();
+		int i=1;					
+		while(line!=null)
+		{
+			String[] s1=line.split("[ ]");
+			int p=1;
+			for(String s2:s1)
+			{
+				if(Integer.parseInt(s2)==1)
+				{
+					p++;
+					temp="("+i+","+p+")";	
+					System.out.println(temp);
+					bw.write(temp);
+					bw.newLine();
+					
+				}
+				else
+				{
+					p++;
+				}
+			}
+		line=br.readLine();
+		i++;
+		}
+	}
+
+}

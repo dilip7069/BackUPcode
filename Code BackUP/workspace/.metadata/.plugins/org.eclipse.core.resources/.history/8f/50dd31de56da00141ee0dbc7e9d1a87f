@@ -1,0 +1,39 @@
+package SingleLinkedList;
+import java.util.Scanner;
+public class SLL {
+	
+	public static void main(String[] args)
+	{
+		int choice;
+		Node n=new Node();
+		
+		Scanner sc=new Scanner();
+		switch(choice)
+		{
+		
+		}
+	}
+
+}
+
+class SLLImplementation
+{
+	Node head=null;
+}
+
+
+
+class Node
+{
+	Node next;
+	int val;
+	Node()
+	{
+		this.next=null;
+	}
+	Node(Node pointer, int value)
+	{
+		this.next=pointer;
+		this.val=value;
+	}
+}

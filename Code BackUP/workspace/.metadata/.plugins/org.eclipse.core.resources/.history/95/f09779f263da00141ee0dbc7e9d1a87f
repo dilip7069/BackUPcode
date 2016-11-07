@@ -1,0 +1,149 @@
+package SingleLinkedList;
+import java.util.Scanner;
+public class SLL {
+	
+	public static void main(String[] args)
+	{
+		int choice=0,value;
+		boolean flag;
+		SLLImplementation S= new SLLImplementation();
+		Scanner sc=new Scanner(System.in);
+		do			
+		{
+		System.out.println("1.Insert into Linked List\n2.IsEmpty??\n3.Traverse ");
+		choice=Integer.parseInt(sc.nextLine());	
+		switch(choice)	
+		{
+		case 1:System.out.println("Enter the value to be inserted");
+		value=Integer.parseInt(sc.nextLine());
+		S.insert(value);
+		break;
+		case 2:
+		flag=S.isEmpty();
+		if(flag)
+			System.out.println("LL is Empty");
+		else
+			System.out.println("LL is not Empty");
+		break;
+		case 3:
+		S.traverse();
+		break;
+		case 4:
+		System.out.println("Enter value to be deleted");
+		value=Integer.parseInt(sc.nextLine());
+		S.deleteNode(value);
+		break;
+		default:
+		System.out.println("Wrong option");
+		}
+		}while(choice<100);
+	}
+
+}
+
+class SLLImplementation
+{
+	Node head=null;
+	
+	public Node getHead()
+	{
+		return this.head;
+	}
+	
+	public void insert(int value)
+	{
+		Node n=new Node(head,value);
+		head=n;	
+	}
+	
+	public void traverse()
+	{
+		Node head=this.getHead();		//Get the current head
+		if(isEmpty())					//Check if LL is empty
+		{
+			System.out.println("Empty Linked List");			
+		}
+		else							//Print LL
+		{
+			while(head!=null)			//Iterate until next pointer is null(End of LL).
+			{
+				System.out.print("->"+head.getVal());
+				head=head.getNext();
+			}
+			System.out.println("");
+		}
+	}
+	
+	public boolean isEmpty()	//Returns true if head==null which means LL is Empty
+	{
+		return this.head==null;
+	}
+	
+	public boolean deleteNode(int value)
+	{
+		Node prev=null, curr=null;
+		if(isEmpty())
+			return false;
+		else
+		{
+			curr=this.getHead();
+			while(curr!=null)
+			{
+				if(curr.getVal()==value)
+				{
+					if(prev==null)
+					{
+						curr.setVal(curr.getNext().getVal());
+						curr.setNext(curr.getNext().getNext());
+						return true;
+					}
+					else
+					{
+						prev.setNext(curr.getNext());
+						return true;
+					}
+				}
+				else
+				{
+					prev=curr;
+					curr=curr.getNext();
+				}
+			}
+		}
+		return false;
+	}
+	
+}
+
+
+
+class Node   //This class represents a Node in Single Linked List
+{
+	private Node next;	//This is a pointer used to point to the next Node 
+	private int val;	//Variable used to store Integer value.
+	Node()		//Default Constructor
+	{
+		this.next=null;
+	}
+	Node(Node pointer, int value)   //Constructor with initial value
+	{
+		this.next=pointer;
+		this.val=value;
+	}
+	public int getVal()		//Returns current node value
+	{
+		return this.val;
+	}
+	public void setVal(int value)	//Sets current node value
+	{
+		this.val=value;
+	}
+	public Node getNext()	// Returns current Nodes next value. Which is a pointer to the next node.
+	{
+		return this.next;
+	}
+	public void setNext(Node pointer) 	//Sets Current Nodes next value i.e., pointer to the next node.
+	{
+		this.next=pointer;
+	}
+}

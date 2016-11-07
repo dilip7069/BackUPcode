@@ -1,0 +1,105 @@
+package SingleLinkedList;
+import java.util.Scanner;
+public class SLL {
+	
+	public static void main(String[] args)
+	{
+		int choice=0,value;
+		boolean flag;
+		SLLImplementation S= new SLLImplementation();
+		Scanner sc=new Scanner(System.in);
+		do			
+		{
+		System.out.println("1.Insert into Linked List\n2.IsEmpty??\n3.Traverse ");
+		choice=Integer.parseInt(sc.nextLine());	
+		switch(choice)	
+		{
+		case 1:System.out.println("Enter the value to be inserted");
+		value=Integer.parseInt(sc.nextLine());
+		S.insert(value);
+		break;
+		case 2:
+		flag=S.isEmpty();
+		if(flag)
+			System.out.println("LL is Empty");
+		else
+			System.out.println("LL is not Empty");
+		break;
+		case 3:
+		S.traverse();
+		break;
+		default:
+		System.out.println("Wrong option");
+		}
+		}while(choice<100);
+	}
+
+}
+
+class SLLImplementation
+{
+	Node head=null;
+	public Node getHead()
+	{
+		return this.head;
+	}
+	public void insert(int value)
+	{
+		Node n=new Node(head,value);
+		head=n;	
+	}
+	public void traverse()
+	{
+		Node head=this.getHead();
+		if(isEmpty())
+		{
+			System.out.println("Empty Linked List");			
+		}
+		else
+		{
+			while(head!=null)
+			{
+				System.out.print("->"+head.getVal());
+				head=head.getNext();
+			}
+			System.out.println("");
+		}
+	}
+	public boolean isEmpty()
+	{
+		return this.head==null;
+	}
+}
+
+
+
+class Node   //This class represents a Node in Single Linked List
+{
+	private Node next;	//This is a pointer used to point to the next Node 
+	private int val;	//Variable used to store Integer value.
+	Node()		//Default Constructor
+	{
+		this.next=null;
+	}
+	Node(Node pointer, int value)   //Constructor with initial value
+	{
+		this.next=pointer;
+		this.val=value;
+	}
+	public int getVal()
+	{
+		return this.val;
+	}
+	public void setVal(int value)
+	{
+		this.val=value;
+	}
+	public Node getNext()
+	{
+		return this.next;
+	}
+	public void setNext(Node pointer)
+	{
+		this.next=pointer;
+	}
+}

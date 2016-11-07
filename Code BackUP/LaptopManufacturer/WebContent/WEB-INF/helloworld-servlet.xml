@@ -1,0 +1,14 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+		"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+<bean id="handlerMapping" class="org.springframework.web.servlet.handler.BeamNameUrlHandlerMapping" />
+
+<bean name="hello.ds" class="Controller.MyController"/>
+
+
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<property name="prefix"  value="/WEB-INF/"> </property>
+<property name="suffix" value=".jsp"> </property>
+</bean>
+</beans>

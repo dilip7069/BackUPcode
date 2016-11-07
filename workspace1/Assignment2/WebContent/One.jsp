@@ -1,0 +1,71 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
+<title>Insert a manufacturer record</title>
+</head>
+<body>
+<h3 align="center">
+Insert a New Manufacturer Record
+</h3>
+<h3 align="center">
+</h3>
+<form action="One_action.jsp">
+<div align="center">
+<p>&nbsp;</p>
+<table cellspacing="2" cellpadding="3" border="1" width="369">
+<tr>
+<td width="38%">
+<strong>Manf Name:</strong>
+</td>
+<td width="62%">
+<input type="text" name="name"/>
+</td>
+</tr>
+<tr>
+<td width="38%">
+<strong>Address Street:</strong>
+</td>
+<td width="62%">
+<input type="text" name="street"/>
+</td>
+</tr>
+<tr>
+<td width="38%">
+<strong>City:</strong>
+</td>
+<td width="62%">
+<input type="text" name="city"/>
+</td>
+</tr>
+<tr>
+<td width="62%">
+<strong>State:</strong>
+</td>
+<td width="62%">
+<input type="text" name="state"/>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Zip Code:</strong>
+</td>
+<td width="62%">
+<input type="text" name="zip_code"/>
+</td>
+</tr>
+</table>
+<table cellspacing="3" cellpadding="2" border="0">
+<tr>
+<td>
+<input type="submit" value="Insert Manufacturer"/>
+</td>
+</tr></table>
+<p>
+</p>
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+package SingleLinkedList;
+import java.util.Scanner;
+public class SLL {
+	
+	public static void main(String[] args)
+	{
+		int choice=0;
+		SLLImplementation S= new SLLImplementation();
+		Scanner sc=new Scanner(System.in);
+		do			
+		{
+		System.out.println(" Hello ");
+		switch(choice)
+		choice=Integer.parseInt(sc.nextLine());		
+		{
+		default:
+		System.out.println("Wrong option");
+		}
+		}while(choice<100);
+	}
+
+}
+
+class SLLImplementation
+{
+	Node head=null;
+}
+
+
+
+class Node   //This class represents a Node in Single Linked List
+{
+	Node next;	//This is a pointer used to point to the next Node 
+	int val;	//Variable used to store Integer value.
+	Node()		//Default Constructor
+	{
+		this.next=null;
+	}
+	Node(Node pointer, int value)   //Constructor with initial value
+	{
+		this.next=pointer;
+		this.val=value;
+	}
+}

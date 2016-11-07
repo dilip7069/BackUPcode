@@ -1,0 +1,17 @@
+<%@page import="CS5513.DataHandler" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+DataHandler handler = new DataHandler();
+if(handler.addManufacturer(request.getParameter("name"),request.getParameter("street"),request.getParameter("city"),request.getParameter("state"),Integer.parseInt(request.getParameter("zip_code")))=="success")
+	out.println("<a href =Home.jsp>Manufacturer Details Stored Click here to go to HomePage</a>");
+%>
+</body>
+</html>
